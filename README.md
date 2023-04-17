@@ -39,4 +39,4 @@ Please provide a clear description of your changes in your pull request and ensu
 
 ## Contact Information
 
-If you have any questions or feedback, feel free to contact me at [your_email_address_here] or via [your_social_media_profile_here].
+If you have any questions or feedback, feel free to contact me at sirviravindra609@gmail.com or via https://www.linkedin.com/in/ravindra-sirvi-a3a260187/.
