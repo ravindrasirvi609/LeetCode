@@ -13,7 +13,7 @@ To submit your solution, create a new file in the `solutions` folder with the pr
 Here's the list of daily LeetCode questions I plan to share:
 
 - Day 1: Median of Two Sorted Arrays
-- Day 2: Reverse Integer
+- Day 2: Rotate Array
 - Day 3: Roman to Integer
 - Day 4: Valid Parentheses
 - Day 5: Merge Two Sorted Lists
