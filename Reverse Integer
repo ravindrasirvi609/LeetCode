@@ -1,0 +1,28 @@
+class Solution {
+    public int reverse(int x) {
+        // Convert the integer to a string
+        String str = String.valueOf(x);
+        
+        // Check if the integer is negative
+        boolean isNegative = false;
+        if (str.charAt(0) == '-') {
+            isNegative = true;
+            str = str.substring(1); // Remove the negative sign
+        }
+        
+        // Reverse the string
+        StringBuilder sb = new StringBuilder(str);
+        sb.reverse();
+        
+        // Convert the reversed string back to an integer
+        int result;
+        try {
+            result = isNegative ? -Integer.parseInt(sb.toString()) : Integer.parseInt(sb.toString());
+        } catch (NumberFormatException e) {
+            // Handle any exception that occurs during parsing (e.g., if the reversed integer overflows)
+            return 0;
+        }
+        
+        return result;
+    }
+}
