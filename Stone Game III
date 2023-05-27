@@ -1,0 +1,26 @@
+class Solution {
+    public String stoneGameIII(int[] stoneValue) {
+        int n = stoneValue.length;
+        int[] dp = new int[n + 1]; // Array to store maximum scores
+        
+        for (int i = n - 1; i >= 0; i--) {
+            int bestScore = Integer.MIN_VALUE;
+            int total = 0;
+            
+            for (int j = i; j < Math.min(i + 3, n); j++) {
+                total += stoneValue[j];
+                bestScore = Math.max(bestScore, total - dp[j + 1]);
+            }
+            
+            dp[i] = bestScore;
+        }
+        
+        if (dp[0] > 0) {
+            return "Alice";
+        } else if (dp[0] < 0) {
+            return "Bob";
+        } else {
+            return "Tie";
+        }
+    }
+}
