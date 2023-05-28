@@ -1,0 +1,33 @@
+
+class Solution {
+    public int minCost(int n, int[] cuts) {
+        int m = cuts.length;
+        
+        // Add the start and end points to the cuts array
+        int[] points = new int[m + 2];
+        points[0] = 0;
+        points[m + 1] = n;
+        for (int i = 0; i < m; i++) {
+            points[i + 1] = cuts[i];
+        }
+        
+        // Sort the cuts array
+        Arrays.sort(points);
+        
+        // Initialize the dp array
+        int[][] dp = new int[m + 2][m + 2];
+        
+        // Solve subproblems using dynamic programming
+        for (int len = 2; len <= m + 1; len++) {
+            for (int i = 0; i + len <= m + 1; i++) {
+                int j = i + len;
+                dp[i][j] = Integer.MAX_VALUE;
+                for (int k = i + 1; k < j; k++) {
+                    dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k][j] + points[j] - points[i]);
+                }
+            }
+        }
+        
+        return dp[0][m + 1];
+    }
+}
