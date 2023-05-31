@@ -1,0 +1,17 @@
+class Solution {
+    public int lengthOfLastWord(String s) {
+        // Trim any leading or trailing white spaces
+        s = s.trim();
+        
+        int length = 0;
+        int lastIndex = s.length() - 1;
+        
+        // Iterate from the end of the string to find the last word
+        while (lastIndex >= 0 && s.charAt(lastIndex) != ' ') {
+            length++;
+            lastIndex--;
+        }
+        
+        return length;
+    }
+}
