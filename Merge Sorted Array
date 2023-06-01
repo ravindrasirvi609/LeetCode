@@ -1,0 +1,38 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+  // Initialize pointers to the start of each array
+  int i = 0;
+  int j = 0;
+
+  // Create a temporary array to store the merged elements
+  int[] temp = new int[m + n];
+
+  // Iterate through both arrays and copy the smaller element to the temporary array
+  while (i < m && j < n) {
+    if (nums1[i] <= nums2[j]) {
+      temp[i + j] = nums1[i];
+      i++;
+    } else {
+      temp[i + j] = nums2[j];
+      j++;
+    }
+  }
+
+  // Copy the remaining elements from the first array to the temporary array
+  while (i < m) {
+    temp[i + j] = nums1[i];
+    i++;
+  }
+
+  // Copy the remaining elements from the second array to the temporary array
+  while (j < n) {
+    temp[i + j] = nums2[j];
+    j++;
+  }
+
+  // Copy the elements from the temporary array to the original array
+  for (int k = 0; k < m + n; k++) {
+    nums1[k] = temp[k];
+  }
+}
+}
